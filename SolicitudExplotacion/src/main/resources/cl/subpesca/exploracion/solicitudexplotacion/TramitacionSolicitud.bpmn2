@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_0FWPQF1vEeaMtqr405SlbQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd" exporter="jBPM Designer" exporterVersion="6.2.0" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.omg.org/bpmn20" typeLanguage="http://www.java.com/javaTypes">
+  <bpmn2:itemDefinition id="_grupoCoordinadorUnidadItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_grupoEncargadoTramiteItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_grupoJefeDivisionItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_grupoOficinaPartesItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_grupoDigitalizadorItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_grupoAbogadoEncargadoUnidadItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_grupoAbogadoEncargadoTramiteItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_grupoProfesionalResponsableItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_grupoJefeDivisionJuridicaItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_grupoSubSecretarioItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_grupoJefeGabineteItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_grupoDespachadorItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_opcionSolicitudItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_2_grupoOficinaPartesInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_2_grupoDigitalizadorInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_2_opcionSolicitudInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_1_grupoCoordinadorUnidadInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_1_grupoEncargadoTramiteInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_1_grupoJefeDivisionInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_3_grupoAbogadoEncargadoUnidadInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_3_grupoAbogadoEncargadoTramiteInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_3_grupoProfesionalResponsableInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_3_grupoJefeDivisionJuridicaInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_3_grupoSubSecretarioInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_3_grupoJefeGabineteInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_4_grupoDespachadorInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_CallActivity_4_grupoOficinaPartesInputXItem" structureRef="String"/>
+  <bpmn2:process id="SolicitudExplotacion.TramitacionSolicitud" drools:packageName="org.jbpm" drools:version="1.1" name="TramitacionSolicitud" isExecutable="true">
+    <bpmn2:property id="grupoCoordinadorUnidad" itemSubjectRef="_grupoCoordinadorUnidadItem"/>
+    <bpmn2:property id="grupoEncargadoTramite" itemSubjectRef="_grupoEncargadoTramiteItem"/>
+    <bpmn2:property id="grupoJefeDivision" itemSubjectRef="_grupoJefeDivisionItem"/>
+    <bpmn2:property id="grupoOficinaPartes" itemSubjectRef="_grupoOficinaPartesItem"/>
+    <bpmn2:property id="grupoDigitalizador" itemSubjectRef="_grupoDigitalizadorItem"/>
+    <bpmn2:property id="grupoAbogadoEncargadoUnidad" itemSubjectRef="_grupoAbogadoEncargadoUnidadItem"/>
+    <bpmn2:property id="grupoAbogadoEncargadoTramite" itemSubjectRef="_grupoAbogadoEncargadoTramiteItem"/>
+    <bpmn2:property id="grupoProfesionalResponsable" itemSubjectRef="_grupoProfesionalResponsableItem"/>
+    <bpmn2:property id="grupoJefeDivisionJuridica" itemSubjectRef="_grupoJefeDivisionJuridicaItem"/>
+    <bpmn2:property id="grupoSubSecretario" itemSubjectRef="_grupoSubSecretarioItem"/>
+    <bpmn2:property id="grupoJefeGabinete" itemSubjectRef="_grupoJefeGabineteItem"/>
+    <bpmn2:property id="grupoDespachador" itemSubjectRef="_grupoDespachadorItem"/>
+    <bpmn2:property id="opcionSolicitud" itemSubjectRef="_opcionSolicitudItem"/>
+    <bpmn2:laneSet id="_0FWPQV1vEeaMtqr405SlbQ">
+      <bpmn2:lane id="Lane_1" drools:selectable="true" color:background-color="#ffffff" color:border-color="#000000" color:color="#000000" name="Proceso Gestion Solicitud">
+        <bpmn2:extensionElements>
+          <drools:metaData name="elementname">
+            <drools:metaValue><![CDATA[Proceso Gestion Solicitud]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+        <bpmn2:flowNodeRef>processStartEvent</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>CallActivity_2</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>CallActivity_1</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>CallActivity_3</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EndEvent_1</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>CallActivity_4</bpmn2:flowNodeRef>
+      </bpmn2:lane>
+    </bpmn2:laneSet>
+    <bpmn2:sequenceFlow id="SequenceFlow_8" drools:selectable="true" drools:priority="1" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="CallActivity_4" targetRef="EndEvent_1"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_4" drools:selectable="true" drools:priority="1" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="processStartEvent" targetRef="CallActivity_2"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_9" drools:selectable="true" drools:priority="1" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="CallActivity_2" targetRef="CallActivity_1"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_10" drools:selectable="true" drools:priority="1" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="CallActivity_1" targetRef="CallActivity_3"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_11" drools:selectable="true" drools:priority="1" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="CallActivity_3" targetRef="CallActivity_4"/>
+    <bpmn2:startEvent id="processStartEvent" drools:selectable="true" color:background-color="#9acd32" color:border-color="#000000" color:color="#000000" name="Inicio">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Inicio]]></drools:metaValue>
+        </drools:metaData>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Inicio]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:outgoing>SequenceFlow_4</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:callActivity id="CallActivity_2" drools:selectable="true" drools:independent="false" drools:waitForCompletion="true" color:background-color="#fafad2" color:border-color="#000000" color:color="#000000" name="Gestion Ingreso" calledElement="GestionIngreso.ProcesoGestionIngreso">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Gestion Ingreso]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_9</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_0FWPQl1vEeaMtqr405SlbQ">
+        <bpmn2:dataInput id="CallActivity_2_grupoOficinaPartesInputX" drools:dtype="String" itemSubjectRef="_CallActivity_2_grupoOficinaPartesInputXItem" name="grupoOficinaPartes"/>
+        <bpmn2:dataInput id="CallActivity_2_grupoDigitalizadorInputX" drools:dtype="String" itemSubjectRef="_CallActivity_2_grupoDigitalizadorInputXItem" name="grupoDigitalizador"/>
+        <bpmn2:dataInput id="CallActivity_2_opcionSolicitudInputX" drools:dtype="String" itemSubjectRef="_CallActivity_2_opcionSolicitudInputXItem" name="opcionSolicitud"/>
+        <bpmn2:inputSet id="_0FWPQ11vEeaMtqr405SlbQ">
+          <bpmn2:dataInputRefs>CallActivity_2_grupoOficinaPartesInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>CallActivity_2_grupoDigitalizadorInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>CallActivity_2_opcionSolicitudInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="_0FWPRF1vEeaMtqr405SlbQ"/>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_0FWPRV1vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoOficinaPartes</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_2_grupoOficinaPartesInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_0FWPRl1vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoDigitalizador</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_2_grupoDigitalizadorInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_0FWPR11vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>opcionSolicitud</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_2_opcionSolicitudInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+    </bpmn2:callActivity>
+    <bpmn2:callActivity id="CallActivity_1" drools:selectable="true" drools:independent="false" drools:waitForCompletion="true" color:background-color="#fafad2" color:border-color="#000000" color:color="#000000" name="Gestion de Tramites" calledElement="org.jbpm.GestionTramites">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Gestion de Tramites]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_9</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_10</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_0FWPSF1vEeaMtqr405SlbQ">
+        <bpmn2:dataInput id="CallActivity_1_grupoCoordinadorUnidadInputX" drools:dtype="String" itemSubjectRef="_CallActivity_1_grupoCoordinadorUnidadInputXItem" name="grupoCoordinadorUnidad"/>
+        <bpmn2:dataInput id="CallActivity_1_grupoEncargadoTramiteInputX" drools:dtype="String" itemSubjectRef="_CallActivity_1_grupoEncargadoTramiteInputXItem" name="grupoEncargadoTramite"/>
+        <bpmn2:dataInput id="CallActivity_1_grupoJefeDivisionInputX" drools:dtype="String" itemSubjectRef="_CallActivity_1_grupoJefeDivisionInputXItem" name="grupoJefeDivision"/>
+        <bpmn2:inputSet id="_0FWPSV1vEeaMtqr405SlbQ">
+          <bpmn2:dataInputRefs>CallActivity_1_grupoCoordinadorUnidadInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>CallActivity_1_grupoEncargadoTramiteInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>CallActivity_1_grupoJefeDivisionInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="_0FWPSl1vEeaMtqr405SlbQ"/>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_0FWPS11vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoCoordinadorUnidad</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_1_grupoCoordinadorUnidadInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_0FWPTF1vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoEncargadoTramite</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_1_grupoEncargadoTramiteInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_0FWPTV1vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoJefeDivision</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_1_grupoJefeDivisionInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+    </bpmn2:callActivity>
+    <bpmn2:callActivity id="CallActivity_3" drools:selectable="true" drools:independent="false" drools:waitForCompletion="true" color:background-color="#fafad2" color:border-color="#000000" color:color="#000000" name="Gestion Documentos Oficiales" calledElement="GestionResolucion.ResolucionCertificado">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Gestion Documentos Oficiales]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_10</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_11</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_0FWPTl1vEeaMtqr405SlbQ">
+        <bpmn2:dataInput id="CallActivity_3_grupoAbogadoEncargadoUnidadInputX" drools:dtype="String" itemSubjectRef="_CallActivity_3_grupoAbogadoEncargadoUnidadInputXItem" name="grupoAbogadoEncargadoUnidad"/>
+        <bpmn2:dataInput id="CallActivity_3_grupoAbogadoEncargadoTramiteInputX" drools:dtype="String" itemSubjectRef="_CallActivity_3_grupoAbogadoEncargadoTramiteInputXItem" name="grupoAbogadoEncargadoTramite"/>
+        <bpmn2:dataInput id="CallActivity_3_grupoProfesionalResponsableInputX" drools:dtype="String" itemSubjectRef="_CallActivity_3_grupoProfesionalResponsableInputXItem" name="grupoProfesionalResponsable"/>
+        <bpmn2:dataInput id="CallActivity_3_grupoJefeDivisionJuridicaInputX" drools:dtype="String" itemSubjectRef="_CallActivity_3_grupoJefeDivisionJuridicaInputXItem" name="grupoJefeDivisionJuridica"/>
+        <bpmn2:dataInput id="CallActivity_3_grupoSubSecretarioInputX" drools:dtype="String" itemSubjectRef="_CallActivity_3_grupoSubSecretarioInputXItem" name="grupoSubSecretario"/>
+        <bpmn2:dataInput id="CallActivity_3_grupoJefeGabineteInputX" drools:dtype="String" itemSubjectRef="_CallActivity_3_grupoJefeGabineteInputXItem" name="grupoJefeGabinete"/>
+        <bpmn2:inputSet id="_0FWPT11vEeaMtqr405SlbQ">
+          <bpmn2:dataInputRefs>CallActivity_3_grupoAbogadoEncargadoUnidadInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>CallActivity_3_grupoAbogadoEncargadoTramiteInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>CallActivity_3_grupoProfesionalResponsableInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>CallActivity_3_grupoJefeDivisionJuridicaInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>CallActivity_3_grupoSubSecretarioInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>CallActivity_3_grupoJefeGabineteInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="_0FWPUF1vEeaMtqr405SlbQ"/>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_0FWPUV1vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoAbogadoEncargadoUnidad</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_3_grupoAbogadoEncargadoUnidadInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_0FWPUl1vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoAbogadoEncargadoTramite</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_3_grupoAbogadoEncargadoTramiteInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_0FWPU11vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoProfesionalResponsable</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_3_grupoProfesionalResponsableInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_0FWPVF1vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoJefeDivisionJuridica</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_3_grupoJefeDivisionJuridicaInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_0FWPVV1vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoSubSecretario</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_3_grupoSubSecretarioInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_0FWPVl1vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoJefeGabinete</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_3_grupoJefeGabineteInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+    </bpmn2:callActivity>
+    <bpmn2:endEvent id="EndEvent_1" drools:selectable="true" color:background-color="#ff6347" color:border-color="#000000" color:color="#000000" name="Fin">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Fin]]></drools:metaValue>
+        </drools:metaData>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Fin]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_8</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:callActivity id="CallActivity_4" drools:selectable="true" drools:independent="false" drools:waitForCompletion="true" color:background-color="#fafad2" color:border-color="#000000" color:color="#000000" name="GestionEgreso" calledElement="GestionEgreso.ProcesoGestionEgreso">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[GestionEgreso]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_11</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_8</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_0FWPV11vEeaMtqr405SlbQ">
+        <bpmn2:dataInput id="CallActivity_4_grupoDespachadorInputX" drools:dtype="String" itemSubjectRef="_CallActivity_4_grupoDespachadorInputXItem" name="grupoDespachador"/>
+        <bpmn2:dataInput id="CallActivity_4_grupoOficinaPartesInputX" drools:dtype="String" itemSubjectRef="_CallActivity_4_grupoOficinaPartesInputXItem" name="grupoOficinaPartes"/>
+        <bpmn2:inputSet id="_0FWPWF1vEeaMtqr405SlbQ">
+          <bpmn2:dataInputRefs>CallActivity_4_grupoDespachadorInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>CallActivity_4_grupoOficinaPartesInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="_0FWPWV1vEeaMtqr405SlbQ"/>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_0FWPWl1vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoDespachador</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_4_grupoDespachadorInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_0FWPW11vEeaMtqr405SlbQ">
+        <bpmn2:sourceRef>grupoOficinaPartes</bpmn2:sourceRef>
+        <bpmn2:targetRef>CallActivity_4_grupoOficinaPartesInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+    </bpmn2:callActivity>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="_0FW2UF1vEeaMtqr405SlbQ">
+    <bpmndi:BPMNPlane id="_0FW2UV1vEeaMtqr405SlbQ" bpmnElement="SolicitudExplotacion.TramitacionSolicitud">
+      <bpmndi:BPMNEdge id="_0FW2Ul1vEeaMtqr405SlbQ" bpmnElement="SequenceFlow_8">
+        <di:waypoint xsi:type="dc:Point" x="1345.0" y="320.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1694.0" y="336.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_0FW2U11vEeaMtqr405SlbQ" bpmnElement="SequenceFlow_4">
+        <di:waypoint xsi:type="dc:Point" x="185.0" y="325.0"/>
+        <di:waypoint xsi:type="dc:Point" x="178.0" y="225.0"/>
+        <di:waypoint xsi:type="dc:Point" x="425.0" y="320.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_0FW2VF1vEeaMtqr405SlbQ" bpmnElement="SequenceFlow_9">
+        <di:waypoint xsi:type="dc:Point" x="425.0" y="320.0"/>
+        <di:waypoint xsi:type="dc:Point" x="725.0" y="320.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_0FW2VV1vEeaMtqr405SlbQ" bpmnElement="SequenceFlow_10">
+        <di:waypoint xsi:type="dc:Point" x="725.0" y="320.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1025.0" y="320.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_0FW2Vl1vEeaMtqr405SlbQ" bpmnElement="SequenceFlow_11">
+        <di:waypoint xsi:type="dc:Point" x="1025.0" y="320.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1345.0" y="320.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_0FW2V11vEeaMtqr405SlbQ" bpmnElement="processStartEvent">
+        <dc:Bounds height="30.0" width="30.0" x="100.0" y="210.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_0FW2WF1vEeaMtqr405SlbQ" bpmnElement="CallActivity_2">
+        <dc:Bounds height="60.0" width="110.0" x="200.0" y="200.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_0FW2WV1vEeaMtqr405SlbQ" bpmnElement="CallActivity_1">
+        <dc:Bounds height="60.0" width="110.0" x="350.0" y="200.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_0FW2Wl1vEeaMtqr405SlbQ" bpmnElement="CallActivity_3">
+        <dc:Bounds height="60.0" width="110.0" x="500.0" y="200.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_0FW2W11vEeaMtqr405SlbQ" bpmnElement="EndEvent_1">
+        <dc:Bounds height="28.0" width="28.0" x="855.0" y="216.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_0FW2XF1vEeaMtqr405SlbQ" bpmnElement="CallActivity_4">
+        <dc:Bounds height="60.0" width="110.0" x="660.0" y="200.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_0FW2XV1vEeaMtqr405SlbQ" bpmnElement="Lane_1">
+        <dc:Bounds height="301.0" width="1021.0" x="30.0" y="110.0"/>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmn2:relationship id="_0FW2Xl1vEeaMtqr405SlbQ" type="BPSimData">
+    <bpmn2:extensionElements>
+      <bpsim:BPSimData>
+        <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
+          <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters" baseTimeUnit="min"/>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="EndEvent_1" id="_0FW2X11vEeaMtqr405SlbQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:UniformDistribution max="10.0" min="5.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="CallActivity_1" id="_0FW2YF1vEeaMtqr405SlbQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:UniformDistribution max="10.0" min="5.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
+              <bpsim:UnitCost xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="SequenceFlow_8" id="_0FW2YV1vEeaMtqr405SlbQ">
+            <bpsim:ControlParameters xsi:type="bpsim:ControlParameters">
+              <bpsim:Probability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="100.0"/>
+              </bpsim:Probability>
+            </bpsim:ControlParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="processStartEvent" id="_0FW2Yl1vEeaMtqr405SlbQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:UniformDistribution max="10.0" min="5.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ControlParameters xsi:type="bpsim:ControlParameters">
+              <bpsim:Probability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="100.0"/>
+              </bpsim:Probability>
+            </bpsim:ControlParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="SequenceFlow_10" id="_0FW2Y11vEeaMtqr405SlbQ">
+            <bpsim:ControlParameters xsi:type="bpsim:ControlParameters">
+              <bpsim:Probability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="100.0"/>
+              </bpsim:Probability>
+            </bpsim:ControlParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="SequenceFlow_9" id="_0FW2ZF1vEeaMtqr405SlbQ">
+            <bpsim:ControlParameters xsi:type="bpsim:ControlParameters">
+              <bpsim:Probability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="100.0"/>
+              </bpsim:Probability>
+            </bpsim:ControlParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="CallActivity_3" id="_0FW2ZV1vEeaMtqr405SlbQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:UniformDistribution max="10.0" min="5.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
+              <bpsim:UnitCost xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="SequenceFlow_11" id="_0FW2Zl1vEeaMtqr405SlbQ">
+            <bpsim:ControlParameters xsi:type="bpsim:ControlParameters">
+              <bpsim:Probability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="100.0"/>
+              </bpsim:Probability>
+            </bpsim:ControlParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="CallActivity_2" id="_0FW2Z11vEeaMtqr405SlbQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:UniformDistribution max="10.0" min="5.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
+              <bpsim:UnitCost xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="SequenceFlow_4" id="_0FW2aF1vEeaMtqr405SlbQ">
+            <bpsim:ControlParameters xsi:type="bpsim:ControlParameters">
+              <bpsim:Probability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="100.0"/>
+              </bpsim:Probability>
+            </bpsim:ControlParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="CallActivity_4" id="_0FW2aV1vEeaMtqr405SlbQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:UniformDistribution max="10.0" min="5.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
+              <bpsim:UnitCost xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+        </bpsim:Scenario>
+      </bpsim:BPSimData>
+    </bpmn2:extensionElements>
+    <bpmn2:source>_0FWPQF1vEeaMtqr405SlbQ</bpmn2:source>
+    <bpmn2:target>_0FWPQF1vEeaMtqr405SlbQ</bpmn2:target>
+  </bpmn2:relationship>
+</bpmn2:definitions>
